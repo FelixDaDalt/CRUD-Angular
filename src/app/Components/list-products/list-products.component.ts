@@ -80,9 +80,7 @@ export class ListProductsComponent implements OnInit {
  
   deleteProduct(producto:Product){
      this.productService.delete(producto.id).subscribe( response=>{
-      console.log(response)
       if(response.isDeleted){
-        console.log("lala")
         let index = this.listProducts.findIndex(x => x.id === producto.id)
         this.listProducts.splice(index,1)
         console.log(this.listProducts)
